@@ -10,6 +10,12 @@ body {
   display: flex;
 }
 
+.right-display {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
 h1 {
   text-align: center;
   color: whitesmoke;
@@ -17,16 +23,17 @@ h1 {
 
 .chat-container {
   margin: 2rem 1rem 0 1rem;
-  width: 18vw;
+  width: 22vw;
   height: 90vh;
   border: 1px solid white;
 }
 
 .characters-status-container {
-  margin: 2rem 1rem 0 1rem;
-  width: 18vw;
-  height: 90vh;
+  margin: -2rem auto;
+  width: 65vw;
+  height: 18vh;
   border: 1px solid white;
+  transform: translateY(400px);
 }
 
 
@@ -36,8 +43,7 @@ h1 {
   height: 198px;
   margin: 0 auto;
   outline: 1px solid #fff;
-
-  transform: scale(2.5) translateY(50%);
+  transform: scale(2.5) translateY(38%);
 }
 
 .game-container canvas {

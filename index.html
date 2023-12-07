@@ -3,22 +3,39 @@
 
 <head>
   <title>Pizza Legends</title>
-  <link href="/styles.css" type="text/css" rel="stylesheet">
+  <link href="/website-styles.css" type="text/css" rel="stylesheet">
+  <link href="/styles/global.css" type="text/css" rel="stylesheet">
+  <link href="/styles/TextMessage.css" type="text/css" rel="stylesheet">
+  <link href="/styles/SceneTransition.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
   <div class="chat-container">
     <h1>Chat</h1>
   </div>
-  <div class="game-container">
-    <canvas class="game-canvas" width="352" height="198"></canvas>
-  </div>
-  <div class="characters-status-container">
-    <h1>Status</h1>
+  <div class="right-display">
+    <div class="game-container">
+      <canvas class="game-canvas" width="352" height="198"></canvas>
+    </div>
+    <div class="characters-status-container">
+      <h1>Status</h1>
+    </div>
   </div>
 
+
   <!-- Scripts -->
+  <script src="/utils.js"></script>
+  <script src="/DirectionInput.js"></script>
   <script src="/Overworld.js"></script>
+  <script src="/GameObject.js"></script>
+  <script src="/Person.js"></script>
+  <script src="/Sprite.js"></script>
+  <script src="/OverworldMap.js"></script>
+  <script src="/OverworldEvent.js"></script>
+  <script src="/TextMessage.js"></script>
+  <script src="/KeyPressListener.js"></script>
+  <script src="/RevealingText.js"></script>
+  <script src="/SceneTransition.js"></script>
   <script src="/init.js"></script>
 
 </body>
