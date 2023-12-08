@@ -32,3 +32,9 @@
 .game-container canvas {
   image-rendering: pixelated;
 }
+
+.floating-person-name {
+  position: absolute;
+  width: 10px;
+  font-size: 6px;
+}

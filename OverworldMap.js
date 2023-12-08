@@ -106,10 +106,12 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(5),
         y: utils.withGrid(6),
+        name: "Bob",
       }),
       npcA: new Person({
         x: utils.withGrid(7),
         y: utils.withGrid(9),
+        name: "Lisa",
         src: "/images/characters/people/npc1.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 800 },
@@ -130,6 +132,7 @@ window.OverworldMaps = {
       npcB: new Person({
         x: utils.withGrid(8),
         y: utils.withGrid(5),
+        name: "Harry",
         src: "/images/characters/people/npc2.png",
         // behaviorLoop: [
         //   { type: "walk",  direction: "left" },
