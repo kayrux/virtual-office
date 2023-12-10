@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Pizza Legends</title>
   <link href="/website-styles.css" type="text/css" rel="stylesheet">
@@ -8,12 +7,30 @@
   <link href="/styles/TextMessage.css" type="text/css" rel="stylesheet">
   <link href="/styles/SceneTransition.css" type="text/css" rel="stylesheet">
   <link href="/styles/Status.css" type="text/css" rel="stylesheet">
-</head>
+  <link href="/styles/RoomChat.css" type="text/css" rel="stylesheet">
+  <link href="/styles/OneToOneChat.css" type="text/css" rel="stylesheet">
 
+</head>
 <body>
-  <div class="chat-container">
-    <h1>Chat</h1>
+  <div id="oneToOneChat" class="chatbox">
+      <div class="chatbox-header">
+          One-to-One Chat
+          <button class="toggle-button" onclick="toggleChat('oneToOneChat')">Close</button>
+      </div>
+      <div class="chatbox-content show">
+          <!-- One-to-One Chat content -->
+      </div>
   </div>
+  <div id="roomChat" class="chatbox">
+      <div class="chatbox-header">
+          Room Chat
+          <button class="toggle-button" onclick="toggleChat('roomChat')">Close</button>
+      </div>
+      <div class="chatbox-content show">
+          <!-- Room Chat content -->
+      </div>
+  </div>
+
   <div class="right-display">
     <div class="game-container">
       <canvas class="game-canvas" width="352" height="198"></canvas>
@@ -22,7 +39,6 @@
       <h1>Status</h1>
     </div>
   </div>
-
 
   <!-- Scripts -->
   <script src="/utils.js"></script>
@@ -39,6 +55,7 @@
   <script src="/SceneTransition.js"></script>
   <script src="/init.js"></script>
   <script src="/Status.js"></script>
+  <script src="/RoomChat.js"></script>
+  <script src="/OneToOneChat.js"></script>
 </body>
-
 </html>

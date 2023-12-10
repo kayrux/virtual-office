@@ -10,6 +10,8 @@ const characterToLocationMap = {
     Lisa: "Meeting Room",
 };
 
+window.characterToLocationMap = characterToLocationMap;
+
 function displayStatus() {
     const locations = {
         "Office": [],
