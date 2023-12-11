@@ -27,5 +27,17 @@ function appendConversationToChatbox(conversation, chatboxId) {
     });
 }
 
+function sendRoomChatMessage() {
+    const inputElement = document.getElementById('roomChatMessage');
+    const message = inputElement.value.trim();
+
+    if (message) {
+        const messageElement = document.createElement("p");
+        messageElement.textContent = "User: " + message;
+        document.querySelector('#roomChat .chatbox-content').appendChild(messageElement);
+        inputElement.value = '';
+    }
+}
+
 // Example usage
 simulateRoomChat("Office"); // Call this with the desired room

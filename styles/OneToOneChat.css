@@ -1,19 +1,19 @@
 #oneToOneChat {
-  width: 120%;
-  height: 50%;
-  /* overflow-y: auto; */
-  background-color: #2a2a2a; 
-  border: 1px solid #3e3e3e; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  color: #ffffff;
-  font-family: 'Courier New', Courier, monospace; 
-  margin-top:-10px
+    width: 120%;
+    height: 50%;
+    background-color: #2a2a2a;
+    border: 1px solid #3e3e3e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* One-to-One Chat header styles */
 .chatbox-header {
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a;
     padding: 10px;
     border-bottom: 1px solid #3e3e3e;
     display: flex;
@@ -21,18 +21,51 @@
     align-items: center;
 }
 
-/* One-to-One Chat content styles */
 .chatbox-content {
     padding: 10px;
     overflow-y: auto;
     background-color: transparent;
+    flex-grow: 1;
 }
 
-/* Style for messages */
 .chatbox-content p {
-    background-color: #333333; 
+    background-color: #333333;
     padding: 5px;
     margin: 5px 0;
-    border-radius: 4px; 
-    font-size: 0.9em; 
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.chatbox-input {
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-top: 1px solid #3e3e3e;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chatbox-input input[type="text"] {
+    width: 85%;
+    padding: 5px;
+    border: 1px solid #3e3e3e; 
+    background-color: #333; 
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+.chatbox-input button {
+    width: 12%;
+    padding: 5px 10px;
+    margin-left: 5%;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.chatbox-input button:hover {
+    background-color: #45a049; 
 }
