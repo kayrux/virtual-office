@@ -34,7 +34,7 @@
 }
 
 input {
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .character-selection-prompt {
@@ -48,5 +48,5 @@ input {
 .clock-in-btn {
   width: 7rem;
   margin: auto;
-  font-size: 11px;
+  font-size: 10px;
 }

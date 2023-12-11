@@ -1,17 +1,12 @@
 #roomChat {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 33%; 
-    height: 33vh; 
-    overflow-y: auto;
-    background-color: #2a2a2a; 
-    border: 1px solid #3e3e3e; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-    color: #ffffff; 
-    font-family: 'Courier New', Courier, monospace; 
-    margin-right: 1040px;
+  height: 50%;
+  overflow-y: auto;
+  background-color: #2a2a2a; 
+  border: 1px solid #3e3e3e; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  color: #ffffff; 
+  font-family: 'Courier New', Courier, monospace; 
 }
 
 /* Room Chat header styles */

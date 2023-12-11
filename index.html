@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Pizza Legends</title>
   <link href="/website-styles.css" type="text/css" rel="stylesheet">
@@ -11,24 +12,27 @@
   <link href="/styles/OneToOneChat.css" type="text/css" rel="stylesheet">
 
 </head>
+
 <body>
-  <div id="oneToOneChat" class="chatbox">
+  <div class="chat-container">
+    <div id="oneToOneChat" class="chatbox">
       <div class="chatbox-header">
-          One-to-One Chat
-          <button class="toggle-button" onclick="toggleChat('oneToOneChat')">Close</button>
+        One-to-One Chat
+        <button class="toggle-button" onclick="toggleChat('oneToOneChat')">Close</button>
       </div>
       <div class="chatbox-content show">
-          <!-- One-to-One Chat content -->
+        <!-- One-to-One Chat content -->
       </div>
-  </div>
-  <div id="roomChat" class="chatbox">
+    </div>
+    <div id="roomChat" class="chatbox">
       <div class="chatbox-header">
-          Room Chat
-          <button class="toggle-button" onclick="toggleChat('roomChat')">Close</button>
+        Room Chat
+        <button class="toggle-button" onclick="toggleChat('roomChat')">Close</button>
       </div>
       <div class="chatbox-content show">
-          <!-- Room Chat content -->
+        <!-- Room Chat content -->
       </div>
+    </div>
   </div>
 
   <div class="right-display">
@@ -66,4 +70,5 @@
   <script src="/RoomChat.js"></script>
   <script src="/OneToOneChat.js"></script>
 </body>
+
 </html>
