@@ -71,8 +71,13 @@ class OverworldMap {
     const match = Object.values(this.gameObjects).find((object) => {
       return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
     });
-    if (!this.isCutscenePlaying && match && match.talking.length) {
-      this.startCutscene(match.talking[0].events);
+    if (!this.isCutscenePlaying) {
+      if (match && match.talking.length) {
+        this.startCutscene(match.talking[0].events);
+      }
+      if (match.availableToChat) {
+        utils.emitEvent("InitiateNewChat", match);
+      }
     }
   }
 
@@ -112,6 +117,7 @@ window.OverworldMaps = {
         x: utils.withGrid(7),
         y: utils.withGrid(9),
         name: "Lisa",
+        availableToChat: true,
         src: "/images/characters/people/npc1.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 800 },
@@ -123,8 +129,6 @@ window.OverworldMaps = {
           {
             events: [
               { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
-              { type: "textMessage", text: "Go away!" },
-              { who: "hero", type: "walk", direction: "up" },
             ],
           },
         ],
@@ -164,12 +168,12 @@ window.OverworldMaps = {
       ],
       [utils.asGridCoord(5, 10)]: [
         {
-          events: [{ type: "changeMap", map: "Kitchen" }],
+          events: [{ type: "changeMap", map: "Break Room" }],
         },
       ],
     },
   },
-  Kitchen: {
+  "Break Room": {
     lowerSrc: "/images/maps/KitchenLower.png",
     upperSrc: "/images/maps/KitchenUpper.png",
     gameObjects: {
