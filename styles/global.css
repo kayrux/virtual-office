@@ -12,22 +12,6 @@
   box-sizing:border-box;
 }
 
-/* body {
-  background: #333;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-} */
-
-/* .game-container {
-  position: relative; 
-  width: 352px;
-  height: 198px;
-  margin: 0 auto;
-  outline: 1px solid #fff;
-
-  transform: scale(3) translateY(50%);
-} */
 
 .game-container canvas {
   image-rendering: pixelated;
@@ -37,4 +21,25 @@
   position: absolute;
   width: 10px;
   font-size: 6px;
+}
+
+#character-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.2rem;
+  margin: 4rem 4rem auto;
+  color: white;
+}
+
+.character-selection-prompt {
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  display: none;
+}
+
+.clock-in-btn {
+  width: 7rem;
+  margin: auto;
 }

@@ -5,6 +5,7 @@ class CharacterSelectionScreen {
     this.element = config.element;
     this.canvas = this.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
+    this.characterName = config.characterName || "Bob";
 
     this.starterCharacters = [
       "/images/characters/people/npc1.png",
@@ -51,14 +52,18 @@ class CharacterSelectionScreen {
   }
 
   init() {
+    let prompt = document.querySelector(".character-selection-prompt");
+    prompt.style.display = "block";
     const keyHandler = (e) => {
       if (e.code === "ArrowLeft" || e.code === "KeyA") {
         this.shiftSelection(-1);
       } else if (e.code === "ArrowRight" || e.code === "KeyD") {
         this.shiftSelection(1);
       } else if (e.code === "Enter") {
+        prompt.style.display = "none";
         utils.emitEvent("CharacterCreated", {
           src: this.starterCharacters[this.currentSelectedCharacter],
+          characterName: this.characterName,
         });
         document.removeEventListener("keydown", keyHandler);
       }

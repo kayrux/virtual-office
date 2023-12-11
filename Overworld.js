@@ -5,6 +5,7 @@ class Overworld {
     this.ctx = this.canvas.getContext("2d");
     this.map = null;
     this.playerCharacterSrc = config.playerCharacterSrc || "";
+    this.characterName = config.characterName;
   }
 
   gameLoopStepWork(delta) {
@@ -80,9 +81,15 @@ class Overworld {
 
   startMap(mapConfig) {
     this.resetFloatingNames();
+
+    // Set player avatar to the selected character
     if (this.playerCharacterSrc) {
-      // Set player character to the selected character
       mapConfig.gameObjects.hero.sprite.image["src"] = this.playerCharacterSrc;
+    }
+
+    // Set character name
+    if (this.characterName) {
+      mapConfig.gameObjects.hero.sprite.name = this.characterName;
     }
     this.map = new OverworldMap(mapConfig);
     this.map.overworld = this;

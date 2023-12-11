@@ -38,11 +38,11 @@ h1 {
 
 
 .game-container {
-  position: relative; 
+  position: relative;
   width: 352px;
   height: 198px;
   margin: 0 auto;
-  outline: 1px solid #fff;
+  background: black;
   transform: scale(2.5) translateY(38%);
 }
 
