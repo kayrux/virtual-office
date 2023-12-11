@@ -15,6 +15,8 @@ class GameObject {
     this.behaviorLoopIndex = 0;
 
     this.talking = config.talking || [];
+    this.name = config.name || "";
+    this.availableToChat = config.availableToChat || false;
   }
 
   mount(map) {

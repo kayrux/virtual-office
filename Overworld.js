@@ -89,10 +89,16 @@ class Overworld {
 
     // Set character name
     if (this.characterName) {
+      window.characterName = this.characterName;
+
       mapConfig.gameObjects.hero.sprite.name = this.characterName;
     }
     this.map = new OverworldMap(mapConfig);
     this.map.overworld = this;
+    utils.emitEvent("UpdateMap", {
+      map: "Office",
+      name: this.characterName,
+    });
 
     this.map.mountObjects();
   }
