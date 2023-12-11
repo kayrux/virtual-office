@@ -75,7 +75,7 @@ class OverworldMap {
       if (match && match.talking.length) {
         this.startCutscene(match.talking[0].events);
       }
-      if (match.availableToChat) {
+      if (match && match.availableToChat) {
         utils.emitEvent("InitiateNewChat", match);
       }
     }
