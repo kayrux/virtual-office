@@ -1,14 +1,15 @@
-function simulateRoomChat() {
-    const breakRoomCharacters = Object.entries(characterToLocationMap)
-        .filter(([character, location]) => location === "Break Room")
+function simulateRoomChat(room) {
+    // Fetch characters based on the specified room
+    const roomCharacters = Object.entries(characterToLocationMap)
+        .filter(([character, location]) => location === room)
         .map(([character]) => character);
 
-    if (breakRoomCharacters.length >= 3) {
+    if (roomCharacters.length >= 3) {
+        // Generate a conversation between the first three characters in the room
         const conversation = [
-            { character: breakRoomCharacters[0], message: "Hey, how's everyone doing?" },
-            { character: breakRoomCharacters[1], message: "Doing well, thanks! How about you?" },
-            { character: breakRoomCharacters[2], message: "I'm good too, just a bit busy today." },
-            // Add more messages as needed
+            { character: roomCharacters[0], message: "Hey, how's everyone doing in the " + room + "?" },
+            { character: roomCharacters[1], message: "Doing well, thanks! Any new updates?" },
+            { character: roomCharacters[2], message: "Just working on the usual tasks." },
         ];
 
         appendConversationToChatbox(conversation, "roomChat");
@@ -17,6 +18,7 @@ function simulateRoomChat() {
 
 function appendConversationToChatbox(conversation, chatboxId) {
     const chatboxContent = document.querySelector('#' + chatboxId + ' .chatbox-content');
+    chatboxContent.innerHTML = ''; 
 
     conversation.forEach(({ character, message }) => {
         const messageElement = document.createElement("p");
@@ -25,5 +27,5 @@ function appendConversationToChatbox(conversation, chatboxId) {
     });
 }
 
-// Call this function to start the conversation simulation
-simulateRoomChat(); // Uncomment this line to automatically start the simulation on load
+// Example usage
+simulateRoomChat("Office"); // Call this with the desired room
