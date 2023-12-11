@@ -23,26 +23,27 @@ h1 {
 
 .chat-container {
   margin: 2rem 1rem 0 1rem;
-  width: 22vw;
+  width: 25vw;
   height: 90vh;
-  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
 .characters-status-container {
   margin: -2rem auto;
   width: 65vw;
   height: 18vh;
-  border: 1px solid white;
   transform: translateY(400px);
 }
 
 
 .game-container {
-  position: relative; 
+  position: relative;
   width: 352px;
   height: 198px;
   margin: 0 auto;
-  outline: 1px solid #fff;
+  background: black;
   transform: scale(2.5) translateY(38%);
 }
 

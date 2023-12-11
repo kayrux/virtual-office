@@ -113,9 +113,6 @@ class Sprite {
       }
     }
 
-    // ctx.font = "40px";
-    // ctx.fillText("Bob", x, y);
-
     this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
     const [frameX, frameY] = this.frame;
 
