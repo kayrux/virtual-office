@@ -1,0 +1,45 @@
+#roomChat {
+  height: 50%;
+  overflow-y: auto;
+  background-color: #2a2a2a; 
+  border: 1px solid #3e3e3e; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  color: #ffffff; 
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+/* Room Chat header styles */
+.chatbox-header {
+    background-color: #1a1a1a; 
+    padding: 10px;
+    border-bottom: 1px solid #3e3e3e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Room Chat content styles */
+.chatbox-content {
+    padding: 10px;
+    overflow-y: auto;
+    background-color: transparent; 
+}
+
+/* Style for messages */
+.chatbox-content p {
+    background-color: #333333;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 4px; 
+    font-size: 0.9em; 
+}
+
+/* Show and hide styles */
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
