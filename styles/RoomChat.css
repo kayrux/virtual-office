@@ -1,6 +1,7 @@
 #roomChat {
   height: 50%;
-  overflow-y: auto;
+  width: 120%;
+  /* overflow-y: auto; */
   background-color: #2a2a2a; 
   border: 1px solid #3e3e3e; 
   border-radius: 8px;

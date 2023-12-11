@@ -1,13 +1,14 @@
 #oneToOneChat {
-  width: 100%;
+  width: 120%;
   height: 50%;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   background-color: #2a2a2a; 
   border: 1px solid #3e3e3e; 
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   color: #ffffff;
   font-family: 'Courier New', Courier, monospace; 
+  margin-top:-10px
 }
 
 /* One-to-One Chat header styles */
