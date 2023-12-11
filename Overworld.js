@@ -4,6 +4,7 @@ class Overworld {
     this.canvas = this.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
     this.map = null;
+    this.playerCharacterSrc = config.playerCharacterSrc || "";
   }
 
   gameLoopStepWork(delta) {
@@ -78,9 +79,26 @@ class Overworld {
   }
 
   startMap(mapConfig) {
+    this.resetFloatingNames();
+    if (this.playerCharacterSrc) {
+      // Set player character to the selected character
+      mapConfig.gameObjects.hero.sprite.image["src"] = this.playerCharacterSrc;
+    }
     this.map = new OverworldMap(mapConfig);
     this.map.overworld = this;
+
     this.map.mountObjects();
+  }
+
+  resetFloatingNames() {
+    // Clear all floating name divs from the document
+    const gameContainer = document.querySelector(".game-container");
+
+    let floatingNameElement = document.querySelector(".floating-person-name");
+    while (floatingNameElement) {
+      gameContainer.removeChild(floatingNameElement);
+      floatingNameElement = document.querySelector(".floating-person-name");
+    }
   }
 
   init() {
@@ -93,7 +111,6 @@ class Overworld {
     this.directionInput.init();
 
     this.startGameLoop();
-
     // this.map.startCutscene([
     //   { type: "changeMap", map: "DemoRoom"}
     //   // { type: "textMessage", text: "This is the very first message!"}

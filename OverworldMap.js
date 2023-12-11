@@ -177,6 +177,7 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(5),
         y: utils.withGrid(5),
+        name: "Bob",
       }),
       npcB: new Person({
         x: utils.withGrid(10),

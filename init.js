@@ -1,8 +1,14 @@
 (function () {
-
-  const overworld = new Overworld({
-    element: document.querySelector(".game-container")
+  const characterSelectionScreen = new CharacterSelectionScreen({
+    element: document.querySelector(".game-container"),
   });
-  overworld.init();
+  characterSelectionScreen.init();
 
+  document.addEventListener("CharacterCreated", (data) => {
+    const overworld = new Overworld({
+      element: document.querySelector(".game-container"),
+      playerCharacterSrc: data.detail.src,
+    });
+    overworld.init();
+  });
 })();
