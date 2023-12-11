@@ -30,6 +30,11 @@
   row-gap: 0.2rem;
   margin: 4rem 4rem auto;
   color: white;
+  font-size: 8px;
+}
+
+input {
+  font-size: 11px;
 }
 
 .character-selection-prompt {
@@ -37,9 +42,11 @@
   text-align: center;
   margin-top: 2rem;
   display: none;
+  font-size: 12px;
 }
 
 .clock-in-btn {
   width: 7rem;
   margin: auto;
+  font-size: 11px;
 }
