@@ -1,0 +1,47 @@
+// Suppose we have an array containing the names of all people
+const users = ["Anna", "Bob", "George", "Daniel", "Fiona", "Lisa", "Chris", "Elsa", "Harry"];
+
+// A variable to save the current chat object
+let currentChatPartner = null;
+
+// Initialize drop-down menu
+function initOneToOneChat() {
+    const userSelect = document.getElementById('userSelect');
+    users.forEach(user => {
+        let option = document.createElement('option');
+        option.value = user;
+        option.innerText = user;
+        userSelect.appendChild(option);
+    });
+
+    // Handle one-to-one chat when selection changes
+    userSelect.addEventListener('change', function() {
+        currentChatPartner = this.value;
+        hideNewMessageNotification();
+        
+    });
+}
+
+function showNewMessageNotification(fromUser) {
+    if (currentChatPartner !== fromUser) {
+        const newMessageNotification = document.getElementById('newMessageNotification');
+        newMessageNotification.style.display = 'inline';
+        newMessageNotification.innerText = `New message from ${fromUser}!`;
+    }
+}
+
+
+function hideNewMessageNotification() {
+    const newMessageNotification = document.getElementById('newMessageNotification');
+    newMessageNotification.style.display = 'none';
+}
+
+function onMessageReceived(fromUser, message) {
+    // If the message is sent from the current chat partner, it will be displayed directly.
+    if (fromUser === currentChatPartner) {
+    } else {
+        showNewMessageNotification(fromUser);
+    }
+}
+
+window.onload = initOneToOneChat;
