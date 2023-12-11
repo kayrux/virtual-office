@@ -168,12 +168,12 @@ window.OverworldMaps = {
       ],
       [utils.asGridCoord(5, 10)]: [
         {
-          events: [{ type: "changeMap", map: "Kitchen" }],
+          events: [{ type: "changeMap", map: "Break Room" }],
         },
       ],
     },
   },
-  Kitchen: {
+  "Break Room": {
     lowerSrc: "/images/maps/KitchenLower.png",
     upperSrc: "/images/maps/KitchenUpper.png",
     gameObjects: {
