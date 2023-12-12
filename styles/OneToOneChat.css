@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-.chatbox-header {
+.oneToOne-header {
     background-color: #1a1a1a;
     padding: 10px;
     border-bottom: 1px solid #3e3e3e;
@@ -21,14 +21,14 @@
     align-items: center;
 }
 
-.chatbox-content {
+.oneToOne-content {
     padding: 10px;
     overflow-y: auto;
     background-color: transparent;
     flex-grow: 1;
 }
 
-.chatbox-content p {
+.oneToOne-content p {
     background-color: #333333;
     padding: 5px;
     margin: 5px 0;
@@ -36,7 +36,7 @@
     font-size: 0.9em;
 }
 
-.chatbox-input {
+.oneToOne-input {
     padding: 10px;
     background-color: #1a1a1a;
     border-top: 1px solid #3e3e3e;
@@ -44,7 +44,7 @@
     justify-content: space-between;
 }
 
-.chatbox-input input[type="text"] {
+.oneToOne-input input[type="text"] {
     width: 85%;
     padding: 5px;
     border: 1px solid #3e3e3e; 
@@ -54,7 +54,7 @@
     font-family: 'Courier New', Courier, monospace; 
 }
 
-.chatbox-input button {
+.oneToOne-input button {
     width: 12%;
     padding: 5px 10px;
     margin-left: 5%;
@@ -66,6 +66,6 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.chatbox-input button:hover {
+.oneToOne-input button:hover {
     background-color: #45a049; 
 }
