@@ -82,7 +82,6 @@ function loadConversationAutomatically(room) {
         .map(([character]) => character)
         .slice(0, 3);
 
-    // Replace placeholders with actual names
     let formattedData = conversation.map(line => 
         line.replace(/{A}/g, roomCharacters[0])
             .replace(/{B}/g, roomCharacters[1])
@@ -102,7 +101,10 @@ function appendConversationToChatbox(lines, chatboxId) {
             const messageElement = document.createElement("p");
             messageElement.textContent = line;
             chatboxContent.appendChild(messageElement);
-        }, index * 10000); // Delay between messages
+
+            // Scroll to the bottom of the chatbox
+            chatboxContent.scrollTop = chatboxContent.scrollHeight;
+        }, index * 4000);
     });
 }
 
@@ -113,7 +115,7 @@ function sendRoomChatMessage() {
 
     if (message) {
         const messageElement = document.createElement("p");
-        messageElement.textContent = userCharacterName + ": " + message; // Use userCharacterName for the message
+        messageElement.textContent = userCharacterName + ": " + message; 
         const chatboxContent = document.querySelector('#roomChat .chatbox-content');
         chatboxContent.appendChild(messageElement);
         inputElement.value = '';
