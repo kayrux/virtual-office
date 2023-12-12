@@ -16,21 +16,27 @@
 <body>
   <div class="chat-container">
     <div id="oneToOneChat" class="chatbox">
-      <div class="chatbox-header">
+      <div class="oneToOne-header">
         One-to-One Chat
-        <button class="toggle-button" onclick="toggleChat('oneToOneChat')">Close</button>
       </div>
-      <div class="chatbox-content show">
+      <div class="oneToOne-content show">
         <!-- One-to-One Chat content -->
+      </div>
+      <div class="oneToOne-input">
+        <input type="text" id="oneToOneChatMessage" placeholder="Enter your message">
+        <button onclick="sendOneToOneChatMessage()">Send</button>
       </div>
     </div>
     <div id="roomChat" class="chatbox">
       <div class="chatbox-header">
         Room Chat
-        <button class="toggle-button" onclick="toggleChat('roomChat')">Close</button>
       </div>
       <div class="chatbox-content show">
         <!-- Room Chat content -->
+      </div>
+      <div class="chatbox-input">
+        <input type="text" id="roomChatMessage" placeholder="Enter your message">
+        <button id="sendRoomChatButton" onclick="sendRoomChatMessage()">Send</button>
       </div>
     </div>
   </div>

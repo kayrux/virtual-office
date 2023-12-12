@@ -44,7 +44,8 @@ h1 {
   height: 198px;
   margin: 0 auto;
   background: black;
-  transform: scale(2.5) translateY(38%);
+  transform: scale(3) translateY(38%);
+  margin-left: 435px;
 }
 
 .game-container canvas {
