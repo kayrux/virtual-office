@@ -36,11 +36,11 @@ const oneToOneConversation = [
     "{E}: Bye for now!"
 ];
 
-let oneToOneIndex = 0; // Index to keep track of the next message from E
+let oneToOneIndex = 0;
 
 function loadOneToOneMessage(otherCharacterName) {
     if (oneToOneIndex < oneToOneConversation.length) {
-        const chatboxContent = document.querySelector('#oneToOneChat .chatbox-content');
+        const chatboxContent = document.querySelector('#oneToOneChat .oneToOne-content');
         const messageElement = document.createElement("p");
         messageElement.textContent = oneToOneConversation[oneToOneIndex].replace(/{E}/g, otherCharacterName);
         chatboxContent.appendChild(messageElement);
@@ -49,33 +49,47 @@ function loadOneToOneMessage(otherCharacterName) {
     }
 }
 
-function sendOneToOneChatMessage() {
+function sendOneToOneChatMessage(otherCharacterName) {
     const userCharacterName = "Thao";
     const inputElement = document.getElementById('oneToOneChatMessage');
     const message = inputElement.value.trim();
 
     if (message) {
-        const chatboxContent = document.querySelector('#oneToOneChat .chatbox-content');
+        const chatboxContent = document.querySelector('#oneToOneChat .oneToOne-content');
         const messageElement = document.createElement("p");
         messageElement.textContent = userCharacterName + ": " + message;
         chatboxContent.appendChild(messageElement);
         inputElement.value = '';
         chatboxContent.scrollTop = chatboxContent.scrollHeight;
 
-        // Load the next message from E after the user sends a message
-        loadOneToOneMessage();
+        setTimeout(() => {
+            loadOneToOneMessage(otherCharacterName);
+        }, 1000); 
     }
 }
 
-// Add event listeners for the one-to-one chat input and send button
-document.getElementById('oneToOneChatMessage').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        e.preventDefault(); // Prevent form submission
-        sendOneToOneChatMessage();
+function startChat(newCharacterName) {
+    // Update the header of the chatbox
+    const chatHeader = document.querySelector('#oneToOneChat .oneToOne-header');
+    if (chatHeader) {
+        chatHeader.textContent = newCharacterName;
     }
-});
+
+    // Update the otherCharacterName for the chat messages
+    if (newCharacterName) {
+        document.getElementById('oneToOneChatMessage').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendOneToOneChatMessage(newCharacterName);
+            }
+        });
+
+        document.getElementById('sendOneToOneChatButton').addEventListener('click', function () {
+            sendOneToOneChatMessage(newCharacterName);
+        });
+    }
+}
 
 document.getElementById('sendOneToOneChatButton').addEventListener('click', sendOneToOneChatMessage);
 
-// Initialize the one-to-one chat with the first message from E
-loadOneToOneMessage("Anna");
+startChat("Elsa")
