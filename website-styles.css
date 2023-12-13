@@ -34,7 +34,7 @@ h1 {
   margin: -2rem auto;
   width: 65vw;
   height: 18vh;
-  transform: translateY(400px);
+  transform: translateY(350px);
 }
 
 
@@ -44,7 +44,7 @@ h1 {
   height: 198px;
   margin: 0 auto;
   background: black;
-  transform: scale(3) translateY(38%);
+  transform: scale(2.5) translateY(38%);
   margin-left: 435px;
 }
 
