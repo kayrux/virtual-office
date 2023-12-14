@@ -74,9 +74,12 @@ const conversation = [
 ];
 
 function loadConversationAutomatically(room) {
-  // Get the first three characters from the specified room
+  if (room === "Hallway") {
+    return; // Do not proceed if the room is 'Hallway'
+  }
+
   const chatboxId = "roomChat";
-  const userCharacterName = window.PlayerName;
+  const userCharacterName = "Thao";
   const roomCharacters = Object.entries(characterToLocationMap)
     .filter(([character, location]) => location === room)
     .map(([character]) => character)
@@ -142,5 +145,8 @@ document
     }
   });
 
-// Example usage
-loadConversationAutomatically("Office");
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    loadConversationAutomatically("Office");
+  }, 60000); // Delay for 1 minute
+});
