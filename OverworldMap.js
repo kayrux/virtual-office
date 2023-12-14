@@ -137,13 +137,13 @@ window.OverworldMaps = {
           { type: "walk", direction: "down" },
           { type: "walk", direction: "down" },
         ],
-        // talking: [
-        //   {
-        //     events: [
-        //       { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
-        //     ],
-        //   },
-        // ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
+            ],
+          },
+        ],
       }),
     },
     walls: {
