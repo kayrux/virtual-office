@@ -117,12 +117,34 @@ window.OverworldMaps = {
         y: utils.withGrid(11),
         name: "Bob",
       }),
-      // npcB: new Person({
-      //   x: utils.withGrid(8),
-      //   y: utils.withGrid(5),
-      //   name: "Harry",
-      //   src: "/images/characters/people/npc1.png",
-      // }),
+      npcA: new Person({
+        x: utils.withGrid(9),
+        y: utils.withGrid(9),
+        name: "Mia",
+        availableToChat: true,
+        src: "/images/characters/people/npc1.png",
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 1800 },
+          { type: "stand", direction: "down", time: 2800 },
+          { type: "stand", direction: "right", time: 1800 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "stand", direction: "up", time: 2800 },
+          { type: "stand", direction: "left", time: 1800 },
+          { type: "stand", direction: "down", time: 1800 },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+        ],
+        // talking: [
+        //   {
+        //     events: [
+        //       { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
+        //     ],
+        //   },
+        // ],
+      }),
     },
     walls: {
       [utils.asGridCoord(0, 4)]: true,
