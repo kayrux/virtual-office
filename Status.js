@@ -8,6 +8,7 @@ const characterToLocationMap = {
   George: "Office",
   Harry: "Break Room",
   Lisa: "Meeting Room",
+  Mia: "Hallway",
 };
 
 window.characterToLocationMap = characterToLocationMap;
@@ -17,6 +18,7 @@ function displayStatus() {
     Office: [],
     "Meeting Room": [],
     "Break Room": [],
+    Hallway: [],
   };
 
   for (const [character, location] of Object.entries(characterToLocationMap)) {
