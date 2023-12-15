@@ -145,6 +145,63 @@ window.OverworldMaps = {
           },
         ],
       }),
+      npcB: new Person({
+        x: utils.withGrid(5),
+        y: utils.withGrid(7),
+        name: "Tony",
+        availableToChat: true,
+        src: "/images/characters/people/npc2.png",
+        behaviorLoop: [
+          { type: "stand", direction: "down", time: 1000 },
+          { type: "stand", direction: "right", time: 800 },
+          { type: "stand", direction: "up", time: 1900 },
+          { type: "stand", direction: "left", time: 1900 },
+
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "down" },
+
+          
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Damm! Where is my access card???", faceHero: "npcB" },
+            ],
+          },
+        ],
+      }),
+      npcC: new Person({
+        x: utils.withGrid(11),
+        y: utils.withGrid(6),
+        name: "Joe",
+        availableToChat: true,
+        src: "/images/characters/people/npc3.png",
+        behaviorLoop: [
+          { type: "stand", direction: "down", time: 9000 },
+          { type: "stand", direction: "left", time: 9300 },
+          { type: "stand", direction: "right", time: 9000 },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "stand", direction: "up", time: 10000 },
+          { type: "stand", direction: "left", time: 3000 },
+          { type: "stand", direction: "down", time: 9000 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Lovely coffee time~~~~~", faceHero: "npcC" },
+            ],
+          },
+        ],
+      }),
     },
     walls: {
       [utils.asGridCoord(0, 4)]: true,
@@ -221,6 +278,70 @@ window.OverworldMaps = {
         x: utils.withGrid(6),
         y: utils.withGrid(11),
         name: "",
+      }),
+      npcD: new Person({
+        x: utils.withGrid(5),
+        y: utils.withGrid(5),
+        name: "Lisa",
+        availableToChat: true,
+        src: "/images/characters/people/npc4.png",
+        behaviorLoop: [
+          { type: "stand", direction: "right", time: 7000 },
+          { type: "stand", direction: "down", time: 7000 },
+          { type: "stand", direction: "right", time: 3000 },
+          { type: "stand", direction: "down", time: 3000 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "down" },
+          
+          
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Hi, Bob, let's schedule a meeting to discuss this project.", faceHero: "npcD" },
+            ],
+          },
+        ],
+      }),
+      npcE: new Person({
+        x: utils.withGrid(5),
+        y: utils.withGrid(7),
+        name: "Daniel",
+        availableToChat: true,
+        src: "/images/characters/people/npc5.png",
+        behaviorLoop: [
+          { type: "stand", direction: "up", time: 9000 },
+          { type: "stand", direction: "right", time: 3000 },
+
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "I will make this suggestion during our team briefing this afternoon.", faceHero: "npcE" },
+            ],
+          },
+        ],
+      }),
+      npcH: new Person({
+        x: utils.withGrid(8),
+        y: utils.withGrid(5),
+        name: "Fiona",
+        availableToChat: true,
+        src: "/images/characters/people/npc8.png",
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 9000 },
+          { type: "stand", direction: "down", time: 3000 },
+
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Ensure all data is verified and updated.", faceHero: "npcH" },
+            ],
+          },
+        ],
       }),
     },
     walls: {
@@ -312,6 +433,45 @@ window.OverworldMaps = {
       //   name: "Harry",
       //   src: "/images/characters/people/npc1.png",
       // }),
+      npcF: new Person({
+        x: utils.withGrid(4),
+        y: utils.withGrid(6),
+        name: "Anna",
+        availableToChat: true,
+        src: "/images/characters/people/npc4.png",
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 10000 },
+          { type: "stand", direction: "down", time: 2000 },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "We need to update our project plan.", faceHero: "npcD" },
+            ],
+          },
+        ],
+      }),
+      npcG: new Person({
+        x: utils.withGrid(4),
+        y: utils.withGrid(8),
+        name: "George",
+        availableToChat: true,
+        src: "/images/characters/people/npc8.png",
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 9000 },
+          { type: "walk", direction: "right" },
+          { type: "stand", direction: "down", time: 3000 },
+          { type: "walk", direction: "left" },
+          { type: "stand", direction: "left", time: 9000 }
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "We need to update our project plan.", faceHero: "npcG" },
+            ],
+          },
+        ],
+      }),
     },
     walls: {
       [utils.asGridCoord(0, 4)]: true,
