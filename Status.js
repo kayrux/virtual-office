@@ -44,7 +44,7 @@ function displayStatus() {
 }
 
 // Call the function to display the status
-document.addEventListener("DOMContentLoaded", displayStatus);
+// document.addEventListener("DOMContentLoaded", displayStatus);
 
 document.addEventListener("UpdateMap", (data) => {
   this.characterToLocationMap[data.detail.name] = data.detail.map;
