@@ -79,7 +79,7 @@ function loadConversationAutomatically(room) {
   }
 
   const chatboxId = "roomChat";
-  const userCharacterName = "Thao";
+  const userCharacterName = window.PlayerName;
   const roomCharacters = Object.entries(characterToLocationMap)
     .filter(([character, location]) => location === room)
     .map(([character]) => character)
@@ -148,5 +148,10 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     loadConversationAutomatically("Office");
-  }, 60000); // Delay for 1 minute
+  }, 10000); // Delay for 1 minute
+});
+
+document.addEventListener("UpdateMap", (data) => {
+  let roomChatTitle = document.querySelector(".chatbox-header");
+  roomChatTitle.innerHTML = data.detail.map + " Chat";
 });

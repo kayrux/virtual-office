@@ -79,7 +79,8 @@ class Overworld {
     });
   }
 
-  startMap(mapConfig) {
+  startMap(mapKey) {
+    const mapConfig = window.OverworldMaps[mapKey];
     this.resetFloatingNames();
 
     // Set player avatar to the selected character
@@ -96,7 +97,7 @@ class Overworld {
     this.map = new OverworldMap(mapConfig);
     this.map.overworld = this;
     utils.emitEvent("UpdateMap", {
-      map: "Office",
+      map: mapKey,
       name: this.characterName,
     });
 
@@ -115,7 +116,8 @@ class Overworld {
   }
 
   init() {
-    this.startMap(window.OverworldMaps.Hallway);
+    window.PlayerName = this.characterName;
+    this.startMap("Hallway");
 
     this.bindActionInput();
     this.bindHeroPositionCheck();
