@@ -81,7 +81,11 @@ const breakRoomConversation = [
 
 function loadConversationAutomatically(room) {
   const chatboxId = "roomChat";
-  const chatboxContent = document.querySelector("#" + chatboxId + " .chatbox-content");  // Define chatboxContent here
+  const chatboxContent = document.querySelector("#" + chatboxId + " .chatbox-content");  
+
+  // Clear existing timeouts
+  messageTimeouts.forEach(timeout => clearTimeout(timeout));
+  messageTimeouts = [];
 
   if (room === "Hallway") {
     return;
