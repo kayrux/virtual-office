@@ -56,7 +56,6 @@ function loadOneToOneMessage() {
 }
 
 function sendOneToOneChatMessage() {
-  console.log("send", otherCharacterName);
   const userCharacterName = window.PlayerName;
   const inputElement = document.getElementById("oneToOneChatMessage");
   const message = inputElement.value.trim();
