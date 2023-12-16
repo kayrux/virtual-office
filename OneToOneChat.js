@@ -37,8 +37,9 @@ const oneToOneConversation = [
 ];
 
 let oneToOneIndex = 0;
+let otherCharacterName = "";
 
-function loadOneToOneMessage(otherCharacterName) {
+function loadOneToOneMessage() {
   if (oneToOneIndex < oneToOneConversation.length) {
     const chatboxContent = document.querySelector(
       "#oneToOneChat .oneToOne-content"
@@ -54,8 +55,9 @@ function loadOneToOneMessage(otherCharacterName) {
   }
 }
 
-function sendOneToOneChatMessage(otherCharacterName) {
-  const userCharacterName = "Thao";
+function sendOneToOneChatMessage() {
+  console.log("send", otherCharacterName);
+  const userCharacterName = window.PlayerName;
   const inputElement = document.getElementById("oneToOneChatMessage");
   const message = inputElement.value.trim();
 
@@ -70,12 +72,14 @@ function sendOneToOneChatMessage(otherCharacterName) {
     chatboxContent.scrollTop = chatboxContent.scrollHeight;
 
     setTimeout(() => {
-      loadOneToOneMessage(otherCharacterName);
+      loadOneToOneMessage();
     }, 1000);
   }
 }
 
 function startChat(newCharacterName) {
+  otherCharacterName = newCharacterName;
+  resetChat();
   // Update the header of the chatbox
   const chatHeader = document.querySelector("#oneToOneChat .oneToOne-header");
   if (chatHeader) {
@@ -89,20 +93,36 @@ function startChat(newCharacterName) {
       .addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
           e.preventDefault();
-          sendOneToOneChatMessage(newCharacterName);
+          sendOneToOneChatMessage();
         }
       });
 
     document
       .getElementById("sendOneToOneChatButton")
       .addEventListener("click", function () {
-        sendOneToOneChatMessage(newCharacterName);
+        sendOneToOneChatMessage();
       });
   }
+}
+function resetChat() {
+  const chatHeader = document.querySelector("#oneToOneChat .oneToOne-header");
+  if (chatHeader) {
+    chatHeader.textContent = "";
+  }
+
+  const chatboxContent = document.querySelector(
+    "#oneToOneChat .oneToOne-content"
+  );
+  chatboxContent.innerHTML = "";
 }
 
 document
   .getElementById("sendOneToOneChatButton")
-  .addEventListener("click", sendOneToOneChatMessage);
+  .addEventListener("onclick", sendOneToOneChatMessage);
 
-startChat("Elsa");
+document.addEventListener("InitiateNewChat", (data) => {
+  startChat(data.detail);
+});
+document.addEventListener("UpdateMap", () => {
+  resetChat();
+});
