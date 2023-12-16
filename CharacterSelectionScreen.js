@@ -8,10 +8,8 @@ class CharacterSelectionScreen {
     this.characterName = config.characterName || "Bob";
 
     this.starterCharacters = [
-      "/images/characters/people/npc1.png",
-      "/images/characters/people/npc2.png",
-      "/images/characters/people/npc3.png",
-      "/images/characters/people/npc4.png",
+      "/images/characters/people/officeguy.png",
+      "/images/characters/people/officelady.png",
     ];
 
     //Configure Animation & Initial State
@@ -91,6 +89,7 @@ class CharacterSelectionScreen {
   }
 
   draw() {
+    const offsetX = 140;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for (let i = 0; i < this.starterCharacters.length; i++) {
       if (this.currentSelectedCharacter === i) {
@@ -105,7 +104,7 @@ class CharacterSelectionScreen {
             frameY * 32,
             32,
             32,
-            utils.withGrid(i * 2) + 110,
+            utils.withGrid(i * 2) + offsetX,
             65,
             32,
             32
@@ -125,7 +124,7 @@ class CharacterSelectionScreen {
           frameY * 32,
           32,
           32,
-          utils.withGrid(i * 2) + 110,
+          utils.withGrid(i * 2) + offsetX,
           70,
           32,
           32
