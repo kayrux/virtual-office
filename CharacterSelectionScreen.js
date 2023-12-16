@@ -114,7 +114,7 @@ class CharacterSelectionScreen {
       let src = this.starterCharacters[i];
       let image = new Image();
       image.src = src;
-
+      // on image load
       image.onload = () => {
         const [frameX, frameY] = this.frame;
 
