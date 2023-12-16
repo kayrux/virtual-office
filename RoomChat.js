@@ -148,9 +148,9 @@ document
 document.addEventListener("UpdateMap", (data) => {
   let roomChatTitle = document.querySelector(".chatbox-header");
   roomChatTitle.innerHTML = data.detail.map + " Chat";
-  // Delay for 5s
+  // Delay for 1s
 
   setTimeout(() => {
     loadConversationAutomatically(data.detail.map);
-  }, 5000);
+  }, 1000);
 });
