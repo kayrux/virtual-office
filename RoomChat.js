@@ -81,7 +81,6 @@ const breakRoomConversation = [
 
 function loadConversationAutomatically(room) {
   if (room === "Hallway") {
-    chatboxContent.innerHTML = ""; // Clear the chatbox if the room is 'Hallway'
     return;
   }
 
@@ -94,17 +93,17 @@ function loadConversationAutomatically(room) {
 
   let selectedConversation;
   switch (room) {
-    case 'Meeting Room':
+    case "Meeting Room":
       selectedConversation = meetingRoomConversation;
       break;
-    case 'Office':
+    case "Office":
       selectedConversation = officeConversation;
       break;
-    case 'Break Room':
+    case "Break Room":
       selectedConversation = breakRoomConversation;
       break;
     default:
-      return; 
+      return;
   }
 
   let formattedData = selectedConversation.map((line) =>
@@ -122,11 +121,13 @@ function loadConversationAutomatically(room) {
 let messageTimeouts = [];
 
 function appendConversationToChatbox(lines, chatboxId) {
-  const chatboxContent = document.querySelector("#" + chatboxId + " .chatbox-content");
+  const chatboxContent = document.querySelector(
+    "#" + chatboxId + " .chatbox-content"
+  );
   chatboxContent.innerHTML = "";
 
   // Clear existing timeouts
-  messageTimeouts.forEach(timeout => clearTimeout(timeout));
+  messageTimeouts.forEach((timeout) => clearTimeout(timeout));
   messageTimeouts = [];
 
   lines.forEach((line, index) => {

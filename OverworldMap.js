@@ -74,10 +74,20 @@ class OverworldMap {
       return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
     });
     if (!this.isCutscenePlaying) {
-      if (match && match.talking.length) {
+      const targetElement = document.querySelector("body");
+      if (
+        match &&
+        match.talking.length &&
+        document.activeElement === targetElement
+      ) {
         this.startCutscene(match.talking[0].events);
       }
-      if (match && match.availableToChat) {
+
+      if (
+        match &&
+        match.availableToChat &&
+        document.activeElement === targetElement
+      ) {
         utils.emitEvent("InitiateNewChat", match.name);
       }
     }
