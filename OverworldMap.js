@@ -114,7 +114,7 @@ class OverworldMap {
   }
 }
 
-window.PlayerName = "Bob";
+window.PlayerName = "John";
 
 window.OverworldMaps = {
   Hallway: {
@@ -125,7 +125,7 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(6),
         y: utils.withGrid(11),
-        name: "Bob",
+        name: "John",
       }),
       npcA: new Person({
         x: utils.withGrid(9),
