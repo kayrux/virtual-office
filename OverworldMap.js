@@ -78,7 +78,7 @@ class OverworldMap {
         this.startCutscene(match.talking[0].events);
       }
       if (match && match.availableToChat) {
-        utils.emitEvent("InitiateNewChat", match);
+        utils.emitEvent("InitiateNewChat", match.name);
       }
     }
   }
@@ -266,6 +266,11 @@ window.OverworldMaps = {
           events: [{ type: "changeMap", map: "Office" }],
         },
       ],
+      [utils.asGridCoord(7, 3)]: [
+        {
+          events: [{ type: "changeMap", map: "Break Room" }],
+        },
+      ],
     },
   },
   "Meeting Room": {
@@ -408,15 +413,6 @@ window.OverworldMaps = {
       [utils.asGridCoord(7, 9)]: true,
     },
     cutsceneSpaces: {
-      // [utils.asGridCoord(6, 12)]: [
-      //   {
-      //     events: [
-      //       { type: "textMessage", text: "I still have more work to do..." },
-      //       { who: "hero", type: "walk", direction: "up" },
-      //       { who: "hero", type: "walk", direction: "up" },
-      //     ],
-      //   },
-      // ],
       [utils.asGridCoord(6, 12)]: [
         {
           events: [{ type: "changeMap", map: "Hallway" }],
@@ -432,14 +428,27 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(6),
         y: utils.withGrid(11),
-        name: "Bob",
+        name: "",
       }),
-      // npcB: new Person({
-      //   x: utils.withGrid(8),
-      //   y: utils.withGrid(5),
-      //   name: "Harry",
-      //   src: "/images/characters/people/npc1.png",
-      // }),
+      npcA: new Person({
+        x: utils.withGrid(10),
+        y: utils.withGrid(6),
+        name: "Bob",
+        availableToChat: true,
+        src: "/images/characters/people/npc2.png",
+        behaviorLoop: [{ type: "stand", direction: "left", time: 2000 }],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Stop bothering me...",
+                faceHero: "npcA",
+              },
+            ],
+          },
+        ],
+      }),
       npcF: new Person({
         x: utils.withGrid(4),
         y: utils.withGrid(6),
@@ -540,15 +549,6 @@ window.OverworldMaps = {
       [utils.asGridCoord(9, 10)]: true,
     },
     cutsceneSpaces: {
-      // [utils.asGridCoord(6, 12)]: [
-      //   {
-      //     events: [
-      //       { type: "textMessage", text: "I still have more work to do..." },
-      //       { who: "hero", type: "walk", direction: "up" },
-      //       { who: "hero", type: "walk", direction: "up" },
-      //     ],
-      //   },
-      // ],
       [utils.asGridCoord(6, 12)]: [
         {
           events: [{ type: "changeMap", map: "Hallway" }],
@@ -556,102 +556,211 @@ window.OverworldMaps = {
       ],
     },
   },
-  DemoRoom: {
-    lowerSrc: "/images/maps/MeetingRoom.png",
+  "Break Room": {
+    lowerSrc: "/images/maps/BreakRoom.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(6),
-        name: "Bob",
+        x: utils.withGrid(6),
+        y: utils.withGrid(11),
+        name: "",
       }),
       npcA: new Person({
-        x: utils.withGrid(7),
-        y: utils.withGrid(9),
-        name: "Lisa",
-        availableToChat: true,
+        x: utils.withGrid(1),
+        y: utils.withGrid(6),
         src: "/images/characters/people/npc1.png",
-        behaviorLoop: [
-          { type: "stand", direction: "left", time: 800 },
-          { type: "stand", direction: "up", time: 800 },
-          { type: "stand", direction: "right", time: 1200 },
-          { type: "stand", direction: "up", time: 300 },
-        ],
-        // talking: [
-        //   {
-        //     events: [
-        //       { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
-        //     ],
-        //   },
-        // ],
-      }),
-      npcB: new Person({
-        x: utils.withGrid(8),
-        y: utils.withGrid(5),
-        name: "Harry",
-        src: "/images/characters/people/officeguy.png",
-        // behaviorLoop: [
-        //   { type: "walk",  direction: "left" },
-        //   { type: "stand",  direction: "up", time: 800 },
-        //   { type: "walk",  direction: "up" },
-        //   { type: "walk",  direction: "right" },
-        //   { type: "walk",  direction: "down" },
-        // ]
-      }),
-    },
-    walls: {
-      [utils.asGridCoord(7, 6)]: true,
-      [utils.asGridCoord(8, 6)]: true,
-      [utils.asGridCoord(7, 7)]: true,
-      [utils.asGridCoord(8, 7)]: true,
-    },
-    cutsceneSpaces: {
-      // [utils.asGridCoord(7, 4)]: [
-      //   {
-      //     events: [
-      //       { who: "npcB", type: "walk", direction: "left" },
-      //       { who: "npcB", type: "stand", direction: "up", time: 500 },
-      //       { type: "textMessage", text: "You can't be in there!" },
-      //       { who: "npcB", type: "walk", direction: "right" },
-      //       { who: "hero", type: "walk", direction: "down" },
-      //       { who: "hero", type: "walk", direction: "left" },
-      //     ],
-      //   },
-      // ],
-      [utils.asGridCoord(5, 10)]: [
-        {
-          events: [{ type: "changeMap", map: "Break Room" }],
-        },
-      ],
-    },
-  },
-  "Break Room": {
-    lowerSrc: "/images/maps/KitchenLower.png",
-    upperSrc: "/images/maps/KitchenUpper.png",
-    gameObjects: {
-      hero: new Person({
-        isPlayerControlled: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(5),
-        name: "Bob",
-      }),
-      npcB: new Person({
-        x: utils.withGrid(10),
-        y: utils.withGrid(8),
-        src: "/images/characters/people/npc3.png",
+        name: "Elsa",
+        availableToChat: true,
         talking: [
           {
             events: [
               {
                 type: "textMessage",
-                text: "You made it! This video is going to be such a good time!",
+                text: "Im having lunch. Want to try some?",
+                faceHero: "npcA",
+              },
+            ],
+          },
+        ],
+        behaviorLoop: [{ type: "stand", direction: "right", time: 9000 }],
+      }),
+      npcB: new Person({
+        x: utils.withGrid(11),
+        y: utils.withGrid(7),
+        src: "/images/characters/people/npc3.png",
+        name: "Chris",
+        availableToChat: true,
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Wanna play?!",
                 faceHero: "npcB",
               },
             ],
           },
         ],
+        behaviorLoop: [{ type: "stand", direction: "left", time: 9000 }],
       }),
+      npcC: new Person({
+        x: utils.withGrid(2),
+        y: utils.withGrid(4),
+        src: "/images/characters/people/npc2.png",
+        name: "Harry",
+        availableToChat: true,
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "I can't decide what to get from the vending machine...",
+                faceHero: "npcC",
+              },
+            ],
+          },
+        ],
+        behaviorLoop: [
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "right" },
+          { type: "stand", direction: "right", time: 2000 },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "left" },
+          { type: "stand", direction: "left", time: 2000 },
+        ],
+      }),
+    },
+    cutsceneSpaces: {
+      [utils.asGridCoord(6, 12)]: [
+        {
+          events: [{ type: "changeMap", map: "Hallway" }],
+        },
+      ],
+    },
+    walls: {
+      [utils.asGridCoord(0, 4)]: true,
+      [utils.asGridCoord(1, 3)]: true,
+      [utils.asGridCoord(2, 3)]: true,
+      [utils.asGridCoord(3, 3)]: true,
+      [utils.asGridCoord(4, 3)]: true,
+      [utils.asGridCoord(5, 3)]: true,
+      [utils.asGridCoord(6, 3)]: true,
+      [utils.asGridCoord(7, 3)]: true,
+      [utils.asGridCoord(8, 3)]: true,
+      [utils.asGridCoord(9, 4)]: true,
+      [utils.asGridCoord(10, 4)]: true,
+      [utils.asGridCoord(11, 4)]: true,
+      [utils.asGridCoord(12, 4)]: true,
+      [utils.asGridCoord(13, 5)]: true,
+      [utils.asGridCoord(13, 6)]: true,
+      [utils.asGridCoord(13, 7)]: true,
+      [utils.asGridCoord(13, 8)]: true,
+      [utils.asGridCoord(13, 9)]: true,
+      [utils.asGridCoord(13, 10)]: true,
+      [utils.asGridCoord(13, 11)]: true,
+      [utils.asGridCoord(12, 12)]: true,
+      [utils.asGridCoord(11, 12)]: true,
+      [utils.asGridCoord(10, 12)]: true,
+      [utils.asGridCoord(9, 12)]: true,
+      [utils.asGridCoord(8, 12)]: true,
+      [utils.asGridCoord(7, 12)]: true,
+      [utils.asGridCoord(6, 13)]: true,
+      [utils.asGridCoord(5, 12)]: true,
+      [utils.asGridCoord(4, 12)]: true,
+      [utils.asGridCoord(3, 12)]: true,
+      [utils.asGridCoord(2, 12)]: true,
+      [utils.asGridCoord(1, 12)]: true,
+      [utils.asGridCoord(0, 11)]: true,
+      [utils.asGridCoord(0, 10)]: true,
+      [utils.asGridCoord(0, 9)]: true,
+      [utils.asGridCoord(0, 8)]: true,
+      [utils.asGridCoord(0, 7)]: true,
+      [utils.asGridCoord(0, 6)]: true,
+      [utils.asGridCoord(0, 5)]: true,
+      [utils.asGridCoord(0, 4)]: true,
+      [utils.asGridCoord(0, 3)]: true,
+      [utils.asGridCoord(0, 2)]: true,
+      //Ping pong table
+      [utils.asGridCoord(9, 7)]: true,
+      [utils.asGridCoord(10, 7)]: true,
+      //Tables
+      [utils.asGridCoord(2, 6)]: true,
+      [utils.asGridCoord(2, 8)]: true,
+      [utils.asGridCoord(2, 10)]: true,
     },
   },
 };
+
+// DemoRoom: {
+//   lowerSrc: "/images/maps/MeetingRoom.png",
+//   upperSrc: "",
+//   gameObjects: {
+//     hero: new Person({
+//       isPlayerControlled: true,
+//       x: utils.withGrid(5),
+//       y: utils.withGrid(6),
+//       name: "Bob",
+//     }),
+//     npcA: new Person({
+//       x: utils.withGrid(7),
+//       y: utils.withGrid(9),
+//       name: "Lisa",
+//       availableToChat: true,
+//       src: "/images/characters/people/npc1.png",
+//       behaviorLoop: [
+//         { type: "stand", direction: "left", time: 800 },
+//         { type: "stand", direction: "up", time: 800 },
+//         { type: "stand", direction: "right", time: 1200 },
+//         { type: "stand", direction: "up", time: 300 },
+//       ],
+//       // talking: [
+//       //   {
+//       //     events: [
+//       //       { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
+//       //     ],
+//       //   },
+//       // ],
+//     }),
+//     npcB: new Person({
+//       x: utils.withGrid(8),
+//       y: utils.withGrid(5),
+//       name: "Harry",
+//       src: "/images/characters/people/officeguy.png",
+//       // behaviorLoop: [
+//       //   { type: "walk",  direction: "left" },
+//       //   { type: "stand",  direction: "up", time: 800 },
+//       //   { type: "walk",  direction: "up" },
+//       //   { type: "walk",  direction: "right" },
+//       //   { type: "walk",  direction: "down" },
+//       // ]
+//     }),
+//   },
+//   walls: {
+//     [utils.asGridCoord(7, 6)]: true,
+//     [utils.asGridCoord(8, 6)]: true,
+//     [utils.asGridCoord(7, 7)]: true,
+//     [utils.asGridCoord(8, 7)]: true,
+//   },
+//   cutsceneSpaces: {
+//     // [utils.asGridCoord(7, 4)]: [
+//     //   {
+//     //     events: [
+//     //       { who: "npcB", type: "walk", direction: "left" },
+//     //       { who: "npcB", type: "stand", direction: "up", time: 500 },
+//     //       { type: "textMessage", text: "You can't be in there!" },
+//     //       { who: "npcB", type: "walk", direction: "right" },
+//     //       { who: "hero", type: "walk", direction: "down" },
+//     //       { who: "hero", type: "walk", direction: "left" },
+//     //     ],
+//     //   },
+//     // ],
+//     [utils.asGridCoord(5, 10)]: [
+//       {
+//         events: [{ type: "changeMap", map: "Break Room" }],
+//       },
+//     ],
+//   },
+// },

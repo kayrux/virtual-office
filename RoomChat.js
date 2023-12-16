@@ -145,13 +145,12 @@ document
     }
   });
 
-document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(function () {
-    loadConversationAutomatically("Office");
-  }, 10000); // Delay for 1 minute
-});
-
 document.addEventListener("UpdateMap", (data) => {
   let roomChatTitle = document.querySelector(".chatbox-header");
   roomChatTitle.innerHTML = data.detail.map + " Chat";
+  // Delay for 1s
+
+  setTimeout(() => {
+    loadConversationAutomatically(data.detail.map);
+  }, 1000);
 });

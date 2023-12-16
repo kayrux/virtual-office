@@ -49,4 +49,14 @@ input {
   width: 7rem;
   margin: auto;
   font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 8px;
 }
