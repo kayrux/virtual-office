@@ -1,81 +1,88 @@
-const conversation = [
-  "{A}: Good morning, {B}, {C}, and {D}! Ready for another productive day?",
-  "{B}: Morning, {A}! Absolutely, just wrapping up the report from yesterday.",
-  "{C}: Hi all! Just got in. {A}, do we have a team meeting scheduled today?",
-  //"{D}: Good morning, everyone! Excited for today's challenges.",
-  "{A}: Yes, {C}. It's right after lunch. Hoping to finalize our project plan.",
-  "{B}: Sounds good. I'll review the plan before the meeting.",
-  "{C}: Great! I've got updates on the client feedback as well.",
-  //"{D}: I'll bring the latest analytics for us to look over in the meeting.",
-  "{A}: Excellent, we'll need that. {B}, how's the budget looking?",
-  "{B}: Almost done. Need your input on a few items, {A}.",
-  "{C}: Speaking of budget, I have some ideas for cost optimization.",
-  //"{D}: That's a good focus, {C}. I've noticed a few areas we could improve.",
-  "{A}: That's great to hear, {C} and {D}! Let's discuss more in the meeting.",
-  "{B}: Will do. Also, are we still on for the conference next week?",
-  "{C}: Yes, got our passes and schedule ready. It's going to be insightful.",
-  //"{D}: I'm really looking forward to the conference. It's a great learning opportunity.",
-  "{A}: Perfect. We should plan our agenda for the conference soon.",
-  "{B}: Agreed. Need to make the most out of it.",
-  "{C}: I'll draft an initial agenda and share it with you all.",
-  //"{D}: I can help with the presentation materials for the conference.",
-  "{A}: Thanks, {C} and {D}. How about we grab a coffee later and go over it?",
-  "{B}: Sounds good, {A}. Could use a coffee break.",
-  "{C}: Count me in! See you both at 11 then?",
-  //"{D}: I'll join as well. The break will be a nice change of pace.",
-  "{A}: Yes, let's meet at the usual spot.",
-  "{B}: Great, see you then!",
-  "{C}: Have you guys heard about the new software update?",
-  //"{D}: I was just reading about it this morning. Seems like a significant upgrade.",
-  "{A}: Not yet, {C}. What's new in this update?",
-  "{B}: I heard it’s supposed to enhance our data security.",
-  "{C}: Exactly, and it adds new features to our analytics tool.",
-  //"{D}: The update will help us streamline our data processing.",
-  "{A}: That’s great news. We should schedule the update soon.",
-  "{B}: Agreed. I’ll check the system compatibility.",
-  "{C}: Also, we need to train the team on the new features.",
-  //"{D}: I can organize a training session for next week.",
-  "{A}: Good point, {C} and {D}. Let's plan a training session next week.",
-  "{B}: I’ll prepare the training materials.",
-  "{C}: I can assist with the technical aspects.",
-  //"{D}: And I'll coordinate with the IT department to ensure a smooth rollout.",
-  "{A}: Perfect, teamwork at its best!",
-  "{B}: How's everyone's workload for this week?",
-  "{C}: Quite packed, I have three client meetings lined up.",
-  //"{D}: My schedule is tight, but manageable. Working on the new project proposal.",
-  "{A}: Mine's manageable. Focused on the new marketing campaign.",
-  "{B}: I’ll need help with the budget analysis, {A}.",
-  "{C}: I can pitch in if you need an extra hand, {B}.",
-  //"{D}: Let me know if you need any data for that, {B}.",
-  "{A}: Thanks, {C} and {D}. We should balance the workload efficiently.",
-  "{B}: Absolutely. Let’s catch up later for planning.",
-  "{C}: By the way, the office is planning a team outing next month.",
-  //"{D}: That's exciting! I love team outings.",
-  "{A}: That’s a great idea. Where are we heading?",
-  "{B}: I heard it might be a beach retreat.",
-  "{C}: Sounds relaxing. We all could use a break.",
-  //"{D}: Beach retreat sounds amazing. I'm definitely in.",
-  "{A}: Definitely. It’ll be a good team bonding opportunity.",
-  "{B}: I agree. Looking forward to it.",
-  "{C}: Let's make sure all major projects are on track before then.",
-  //"{D}: Good thinking, {C}. We don't want to leave any loose ends.",
-  "{A}: Right. We don’t want work piling up while we’re away.",
-  "{B}: True. Let's prioritize our tasks accordingly.",
-  "{C}: I’ll update the project timeline today.",
-  //"{D}: And I'll assist with project management to keep things on track.",
-  "{A}: Thanks, {C} and {D}. Let’s ensure everything runs smoothly.",
-  "{B}: I’ll oversee the ongoing projects.",
-  "{C}: And I’ll handle the client communications.",
-  //"{D}: I'll support wherever needed. Team, let's keep up the good work!",
-  "{A}: Team, we’ve got a busy day ahead. Let’s do our best!",
-  "{B}: Agreed. Let's meet later to sync up.",
-  "{C}: See you both in the meeting room at 2 PM.",
-  //"{D}: Looking forward to it. Have a great day, everyone!"
+const officeConversation = [
+  "{A}: Morning everyone! How are we doing with the current projects?",
+  "{B}: Hi {A}, I'm on track with the marketing analysis. Should be ready by this afternoon.",
+  "{C}: Good morning! I'm a bit behind on the quarterly report, could use some help.",
+  //"{D}: Hey team, I'll be available to assist after I finish the client presentation.",
+  "{A}: Great to hear, {B}. {C}, let's see if we can delegate some tasks to balance the workload.",
+  "{B}: I can take a look at part of the report, {C}. Just send me the details.",
+  "{C}: Thanks, {B}! That would be really helpful.",
+  //"{D}: I can review the final draft later today, {C}. Just let me know.",
+  "{A}: Remember, we have a team meeting at 3 PM to discuss our progress.",
+  "{B}: Got it, I'll prepare a brief summary of my analysis for the meeting.",
+  "{C}: I'll make sure to have an update on the report status by then.",
+  //"{D}: I'll share the feedback from the client presentation as well.",
+  "{A}: Also, there's a new update for our project management software. Make sure to install it today.",
+  "{B}: Will do. I heard it has some useful new features.",
+  "{C}: I'll install it after finishing my part of the report.",
+  //"{D}: Already installed it. The new interface looks clean and user-friendly.",
+  "{A}: One last thing, we need to prepare for the upcoming audit. Let's be proactive about it.",
+  "{B}: I'll start compiling the necessary financial documents.",
+  "{C}: And I'll double-check our compliance reports.",
+  //"{D}: I'll assist with organizing the files and data for the audit.",
+  "{A}: Thanks, team. Let's keep up the good work and stay focused.",
+  "{B}: Absolutely. Let's make this a productive day.",
+  "{C}: Agreed. Let's get things done!",
+  //"{D}: Here's to a successful day ahead!"
+];
+
+const meetingRoomConversation = [
+  "{A}: Alright everyone, let's start this meeting. First, let's go over the status of Project X.",
+  "{B}: I have the latest numbers. We're on track with the development timeline, but we're over budget.",
+  "{C}: The overage is mainly due to the unexpected licensing fees we encountered last month.",
+  //"{D}: I've reviewed the budget. We can reallocate some funds from the marketing budget to cover it.",
+  "{A}: Good work on that, {D}. Next, let's discuss the client feedback from our latest product launch.",
+  "{B}: The feedback has been mostly positive, but there are concerns about the user interface.",
+  "{C}: I suggest we schedule a meeting with the design team to discuss potential improvements.",
+  //"{D}: Agreed. I'll set up the meeting for next week and include the key points from the feedback.",
+  "{A}: Moving on, we need to finalize our plans for the upcoming trade show. Who's leading that?",
+  "{B}: That would be me. I've already booked our space and started preparing the product demos.",
+  "{C}: I'll help with the promotional materials and make sure our social media is updated.",
+  //"{D}: And I'll coordinate with the logistics team to ensure everything is transported safely.",
+  "{A}: Excellent teamwork. Lastly, let's talk about our goals for the next quarter.",
+  "{B}: One of our main goals should be increasing customer engagement on our platform.",
+  "{C}: We also need to focus on improving our product based on the recent user feedback.",
+  //"{D}: I think a push towards more data-driven decision making should be another goal for us.",
+  "{A}: Great input, everyone. Before we wrap up, any other points or updates?",
+  "{B}: Just a reminder, the deadline for the annual report submissions is next Friday.",
+  "{C}: I'll need some data from each department for the sustainability section of the report.",
+  //"{D}: I'll compile the data and send it to you by Wednesday, {C}.",
+  "{A}: Thanks, everyone, for the productive discussion. Let's reconvene next week, same time.",
+  "{B}: Sounds good. See you all next week.",
+  "{C}: Have a great day, everyone!",
+  //"{D}: Looking forward to seeing the progress we make by next week!"
+];
+
+const breakRoomConversation = [
+  "{A}: Hey everyone, how's your day going so far?",
+  "{B}: Not too bad, just finished a big part of my project. How about you?",
+  "{C}: Pretty good. I’m looking forward to the weekend though.",
+  //"{D}: Yeah, same here. Planning to catch up on some reading.",
+  "{A}: Did anyone catch the game last night?",
+  "{B}: I missed it. Who won?",
+  "{C}: Our team did! It was a really close match, super exciting.",
+  //"{D}: I saw the highlights. That last-minute goal was amazing.",
+  "{A}: Oh, by the way, have you guys tried the new coffee machine?",
+  "{B}: Yes, I have. The espresso it makes is really strong!",
+  "{C}: I haven’t yet. I’ll probably give it a try during my next break.",
+  //"{D}: I like it. It's definitely an upgrade from the old one.",
+  "{A}: Changing topics, is anyone doing anything fun this weekend?",
+  "{B}: I'm going hiking. The weather is supposed to be great.",
+  "{C}: Sounds nice. I'm just planning a quiet weekend at home.",
+  //"{D}: I might go to the movies. There's a new sci-fi film out.",
+  "{A}: That sounds like a good mix of plans. Oh, and don't forget about the team lunch next week.",
+  "{B}: Right, I'm looking forward to trying that new Italian place.",
+  "{C}: Me too! I've heard their pasta dishes are fantastic.",
+  //"{D}: I’m just excited about the free food, to be honest!",
+  "{A}: Alright, I should head back. Got a report to finish.",
+  "{B}: Yeah, me too. Let’s catch up again later.",
+  "{C}: See you around, everyone!",
+  //"{D}: Have a good one, everyone. Back to work, I guess."
 ];
 
 function loadConversationAutomatically(room) {
   if (room === "Hallway") {
-    return; // Do not proceed if the room is 'Hallway'
+    chatboxContent.innerHTML = ""; // Clear the chatbox if the room is 'Hallway'
+    return;
   }
 
   const chatboxId = "roomChat";
@@ -85,7 +92,22 @@ function loadConversationAutomatically(room) {
     .map(([character]) => character)
     .slice(0, 3);
 
-  let formattedData = conversation.map((line) =>
+  let selectedConversation;
+  switch (room) {
+    case 'Meeting Room':
+      selectedConversation = meetingRoomConversation;
+      break;
+    case 'Office':
+      selectedConversation = officeConversation;
+      break;
+    case 'Break Room':
+      selectedConversation = breakRoomConversation;
+      break;
+    default:
+      return; 
+  }
+
+  let formattedData = selectedConversation.map((line) =>
     line
       .replace(/{A}/g, roomCharacters[0])
       .replace(/{B}/g, roomCharacters[1])
@@ -96,21 +118,27 @@ function loadConversationAutomatically(room) {
   appendConversationToChatbox(formattedData, chatboxId);
 }
 
+// Store the timeout IDs
+let messageTimeouts = [];
+
 function appendConversationToChatbox(lines, chatboxId) {
-  const chatboxContent = document.querySelector(
-    "#" + chatboxId + " .chatbox-content"
-  );
+  const chatboxContent = document.querySelector("#" + chatboxId + " .chatbox-content");
   chatboxContent.innerHTML = "";
 
+  // Clear existing timeouts
+  messageTimeouts.forEach(timeout => clearTimeout(timeout));
+  messageTimeouts = [];
+
   lines.forEach((line, index) => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       const messageElement = document.createElement("p");
       messageElement.textContent = line;
       chatboxContent.appendChild(messageElement);
-
-      // Scroll to the bottom of the chatbox
       chatboxContent.scrollTop = chatboxContent.scrollHeight;
     }, index * 4000);
+
+    // Store the timeout ID
+    messageTimeouts.push(timeoutId);
   });
 }
 
