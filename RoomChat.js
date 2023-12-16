@@ -80,12 +80,14 @@ const breakRoomConversation = [
 ];
 
 function loadConversationAutomatically(room) {
+  const chatboxId = "roomChat";
+  const chatboxContent = document.querySelector("#" + chatboxId + " .chatbox-content");  // Define chatboxContent here
+
   if (room === "Hallway") {
     chatboxContent.innerHTML = ""; // Clear the chatbox if the room is 'Hallway'
     return;
   }
 
-  const chatboxId = "roomChat";
   const userCharacterName = window.PlayerName;
   const roomCharacters = Object.entries(characterToLocationMap)
     .filter(([character, location]) => location === room)
@@ -104,7 +106,7 @@ function loadConversationAutomatically(room) {
       selectedConversation = breakRoomConversation;
       break;
     default:
-      return; 
+      return;
   }
 
   let formattedData = selectedConversation.map((line) =>
