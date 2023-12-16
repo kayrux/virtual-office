@@ -5,7 +5,7 @@ class CharacterSelectionScreen {
     this.element = config.element;
     this.canvas = this.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
-    this.characterName = config.characterName || "Bob";
+    this.characterName = config.characterName || "John";
 
     this.starterCharacters = [
       "/images/characters/people/officeguy.png",
@@ -114,7 +114,7 @@ class CharacterSelectionScreen {
       let src = this.starterCharacters[i];
       let image = new Image();
       image.src = src;
-
+      // on image load
       image.onload = () => {
         const [frameX, frameY] = this.frame;
 
