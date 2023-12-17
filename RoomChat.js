@@ -187,7 +187,12 @@ document
 
 document.addEventListener("UpdateMap", (data) => {
   let roomChatTitle = document.querySelector(".chatbox-header");
-  roomChatTitle.innerHTML = data.detail.map + " Chat";
+
+  if (data.detail.map === "Blank") {
+    roomChatTitle.innerHTML = "Room chat";
+  } else {
+    roomChatTitle.innerHTML = data.detail.map + " Chat";
+  }
   // Delay for 1s
 
   setTimeout(() => {

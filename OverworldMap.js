@@ -259,11 +259,7 @@ window.OverworldMaps = {
     cutsceneSpaces: {
       [utils.asGridCoord(6, 12)]: [
         {
-          events: [
-            { type: "textMessage", text: "I still have more work to do..." },
-            { who: "hero", type: "walk", direction: "up" },
-            { who: "hero", type: "walk", direction: "up" },
-          ],
+          events: [{ type: "changeMap", map: "Blank" }],
         },
       ],
       [utils.asGridCoord(5, 3)]: [
@@ -700,6 +696,18 @@ window.OverworldMaps = {
       [utils.asGridCoord(2, 6)]: true,
       [utils.asGridCoord(2, 8)]: true,
       [utils.asGridCoord(2, 10)]: true,
+    },
+  },
+  Blank: {
+    lowerSrc: "/images/maps/Blank.png",
+    upperSrc: "",
+    gameObjects: {
+      hero: new Person({
+        isPlayerControlled: true,
+        x: utils.withGrid(5),
+        y: utils.withGrid(6),
+        name: "Bob",
+      }),
     },
   },
 };
