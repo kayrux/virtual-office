@@ -23,3 +23,16 @@ function removeCharacterNamePrompt() {
   let el = document.getElementById("character-name-container");
   el.style.display = "none";
 }
+
+document.addEventListener("UpdateMap", (data) => {
+  setTimeout(() => {
+    if (data.detail.map === "Blank") {
+      let gameContainer = document.querySelector(".game-container");
+      let el = document.createElement("div");
+      el.classList.add("clocked-out");
+      el.innerHTML = "Clocked out";
+      gameContainer.appendChild(el);
+      console.log("clock out");
+    }
+  }, 1000);
+});

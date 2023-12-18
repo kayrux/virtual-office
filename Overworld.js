@@ -80,6 +80,9 @@ class Overworld {
   }
 
   startMap(mapKey) {
+    if (mapKey === "Blank") {
+      return;
+    }
     const mapConfig = window.OverworldMaps[mapKey];
     this.resetFloatingNames();
 

@@ -74,10 +74,20 @@ class OverworldMap {
       return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
     });
     if (!this.isCutscenePlaying) {
-      if (match && match.talking.length) {
+      const targetElement = document.querySelector("body");
+      if (
+        match &&
+        match.talking.length &&
+        document.activeElement === targetElement
+      ) {
         this.startCutscene(match.talking[0].events);
       }
-      if (match && match.availableToChat) {
+
+      if (
+        match &&
+        match.availableToChat &&
+        document.activeElement === targetElement
+      ) {
         utils.emitEvent("InitiateNewChat", match.name);
       }
     }
@@ -104,7 +114,7 @@ class OverworldMap {
   }
 }
 
-window.PlayerName = "Bob";
+window.PlayerName = "John";
 
 window.OverworldMaps = {
   Hallway: {
@@ -115,7 +125,7 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(6),
         y: utils.withGrid(11),
-        name: "Bob",
+        name: "John",
       }),
       npcA: new Person({
         x: utils.withGrid(9),
@@ -249,11 +259,7 @@ window.OverworldMaps = {
     cutsceneSpaces: {
       [utils.asGridCoord(6, 12)]: [
         {
-          events: [
-            { type: "textMessage", text: "I still have more work to do..." },
-            { who: "hero", type: "walk", direction: "up" },
-            { who: "hero", type: "walk", direction: "up" },
-          ],
+          events: [{ type: "changeMap", map: "Blank" }],
         },
       ],
       [utils.asGridCoord(5, 3)]: [
@@ -690,6 +696,18 @@ window.OverworldMaps = {
       [utils.asGridCoord(2, 6)]: true,
       [utils.asGridCoord(2, 8)]: true,
       [utils.asGridCoord(2, 10)]: true,
+    },
+  },
+  Blank: {
+    lowerSrc: "/images/maps/Blank.png",
+    upperSrc: "",
+    gameObjects: {
+      hero: new Person({
+        isPlayerControlled: true,
+        x: utils.withGrid(5),
+        y: utils.withGrid(6),
+        name: "Bob",
+      }),
     },
   },
 };
