@@ -118,7 +118,7 @@ window.PlayerName = "John";
 
 window.OverworldMaps = {
   Hallway: {
-    lowerSrc: "/images/maps/Hallway.png",
+    lowerSrc: "assets/images/maps/Hallway.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
@@ -132,7 +132,7 @@ window.OverworldMaps = {
         y: utils.withGrid(9),
         name: "Mia",
         availableToChat: true,
-        src: "/images/characters/people/npc1.png",
+        src: "assets/images/characters/people/npc1.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 1800 },
           { type: "stand", direction: "down", time: 2800 },
@@ -160,7 +160,7 @@ window.OverworldMaps = {
       //   y: utils.withGrid(7),
       //   name: "Tony",
       //   availableToChat: true,
-      //   src: "/images/characters/people/npc2.png",
+      //   src: "assets/images/characters/people/npc2.png",
       //   behaviorLoop: [
       //     { type: "stand", direction: "down", time: 1000 },
       //     { type: "stand", direction: "right", time: 800 },
@@ -186,7 +186,7 @@ window.OverworldMaps = {
       //   y: utils.withGrid(6),
       //   name: "Joe",
       //   availableToChat: true,
-      //   src: "/images/characters/people/npc3.png",
+      //   src: "assets/images/characters/people/npc3.png",
       //   behaviorLoop: [
       //     { type: "stand", direction: "down", time: 9000 },
       //     { type: "stand", direction: "left", time: 9300 },
@@ -280,7 +280,7 @@ window.OverworldMaps = {
     },
   },
   "Meeting Room": {
-    lowerSrc: "/images/maps/MeetingRoom.png",
+    lowerSrc: "assets/images/maps/MeetingRoom.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
@@ -294,7 +294,7 @@ window.OverworldMaps = {
         y: utils.withGrid(5),
         name: "Lisa",
         availableToChat: true,
-        src: "/images/characters/people/npc4.png",
+        src: "assets/images/characters/people/npc4.png",
         behaviorLoop: [
           { type: "stand", direction: "right", time: 7000 },
           { type: "stand", direction: "down", time: 7000 },
@@ -322,7 +322,7 @@ window.OverworldMaps = {
         y: utils.withGrid(7),
         name: "Daniel",
         availableToChat: true,
-        src: "/images/characters/people/npc5.png",
+        src: "assets/images/characters/people/npc5.png",
         behaviorLoop: [
           { type: "stand", direction: "up", time: 9000 },
           { type: "stand", direction: "right", time: 3000 },
@@ -344,7 +344,7 @@ window.OverworldMaps = {
         y: utils.withGrid(5),
         name: "Fiona",
         availableToChat: true,
-        src: "/images/characters/people/npc8.png",
+        src: "assets/images/characters/people/npc8.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 9000 },
           { type: "stand", direction: "down", time: 3000 },
@@ -427,7 +427,7 @@ window.OverworldMaps = {
     },
   },
   Office: {
-    lowerSrc: "/images/maps/Office.png",
+    lowerSrc: "assets/images/maps/Office.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
@@ -441,7 +441,7 @@ window.OverworldMaps = {
         y: utils.withGrid(6),
         name: "Bob",
         availableToChat: true,
-        src: "/images/characters/people/npc2.png",
+        src: "assets/images/characters/people/npc2.png",
         behaviorLoop: [{ type: "stand", direction: "left", time: 2000 }],
         talking: [
           {
@@ -460,7 +460,7 @@ window.OverworldMaps = {
         y: utils.withGrid(6),
         name: "Anna",
         availableToChat: true,
-        src: "/images/characters/people/npc4.png",
+        src: "assets/images/characters/people/npc4.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 10000 },
           { type: "stand", direction: "down", time: 2000 },
@@ -482,7 +482,7 @@ window.OverworldMaps = {
         y: utils.withGrid(8),
         name: "George",
         availableToChat: true,
-        src: "/images/characters/people/npc8.png",
+        src: "assets/images/characters/people/npc8.png",
         behaviorLoop: [
           { type: "stand", direction: "left", time: 9000 },
           { type: "walk", direction: "right" },
@@ -563,7 +563,7 @@ window.OverworldMaps = {
     },
   },
   "Break Room": {
-    lowerSrc: "/images/maps/BreakRoom.png",
+    lowerSrc: "assets/images/maps/BreakRoom.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
@@ -575,7 +575,7 @@ window.OverworldMaps = {
       npcA: new Person({
         x: utils.withGrid(1),
         y: utils.withGrid(6),
-        src: "/images/characters/people/npc1.png",
+        src: "assets/images/characters/people/npc1.png",
         name: "Elsa",
         availableToChat: true,
         talking: [
@@ -594,7 +594,7 @@ window.OverworldMaps = {
       npcB: new Person({
         x: utils.withGrid(11),
         y: utils.withGrid(7),
-        src: "/images/characters/people/npc3.png",
+        src: "assets/images/characters/people/npc3.png",
         name: "Chris",
         availableToChat: true,
         talking: [
@@ -613,7 +613,7 @@ window.OverworldMaps = {
       npcC: new Person({
         x: utils.withGrid(2),
         y: utils.withGrid(4),
-        src: "/images/characters/people/npc2.png",
+        src: "assets/images/characters/people/npc2.png",
         name: "Harry",
         availableToChat: true,
         talking: [
@@ -699,7 +699,7 @@ window.OverworldMaps = {
     },
   },
   Blank: {
-    lowerSrc: "/images/maps/Blank.png",
+    lowerSrc: "assets/images/maps/Blank.png",
     upperSrc: "",
     gameObjects: {
       hero: new Person({
@@ -713,7 +713,7 @@ window.OverworldMaps = {
 };
 
 // DemoRoom: {
-//   lowerSrc: "/images/maps/MeetingRoom.png",
+//   lowerSrc: "assets/images/maps/MeetingRoom.png",
 //   upperSrc: "",
 //   gameObjects: {
 //     hero: new Person({
@@ -727,7 +727,7 @@ window.OverworldMaps = {
 //       y: utils.withGrid(9),
 //       name: "Lisa",
 //       availableToChat: true,
-//       src: "/images/characters/people/npc1.png",
+//       src: "assets/images/characters/people/npc1.png",
 //       behaviorLoop: [
 //         { type: "stand", direction: "left", time: 800 },
 //         { type: "stand", direction: "up", time: 800 },
@@ -746,7 +746,7 @@ window.OverworldMaps = {
 //       x: utils.withGrid(8),
 //       y: utils.withGrid(5),
 //       name: "Harry",
-//       src: "/images/characters/people/officeguy.png",
+//       src: "assets/images/characters/people/officeguy.png",
 //       // behaviorLoop: [
 //       //   { type: "walk",  direction: "left" },
 //       //   { type: "stand",  direction: "up", time: 800 },

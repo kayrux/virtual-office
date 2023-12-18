@@ -8,8 +8,8 @@ class CharacterSelectionScreen {
     this.characterName = config.characterName || "John";
 
     this.starterCharacters = [
-      "/images/characters/people/officeguy.png",
-      "/images/characters/people/officelady.png",
+      "assets/images/characters/people/officeguy.png",
+      "assets/images/characters/people/officelady.png",
     ];
 
     //Configure Animation & Initial State
@@ -94,7 +94,7 @@ class CharacterSelectionScreen {
     for (let i = 0; i < this.starterCharacters.length; i++) {
       if (this.currentSelectedCharacter === i) {
         let spotlight = new Image();
-        spotlight.src = "/images/characters/selection-arrow.png";
+        spotlight.src = "assets/images/characters/selection-arrow.png";
         spotlight.onload = () => {
           const [frameX, frameY] = this.frame;
 
