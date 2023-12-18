@@ -43,10 +43,18 @@ function displayStatus() {
   document.querySelector(".characters-status-container").innerHTML = content;
 }
 
+function clearStatus() {
+  document.querySelector(".characters-status-container").innerHTML = "";
+}
+
 // Call the function to display the status
 // document.addEventListener("DOMContentLoaded", displayStatus);
 
 document.addEventListener("UpdateMap", (data) => {
+  if (data.detail.map === "Blank") {
+    clearStatus();
+    return;
+  }
   this.characterToLocationMap[data.detail.name] = data.detail.map;
   displayStatus();
 });

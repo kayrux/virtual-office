@@ -66,6 +66,9 @@ class OverworldEvent {
   }
 
   changeMap(resolve) {
+    if (this.event.map === "Blank") {
+      this.map.isPaused = true;
+    }
     utils.emitEvent("UpdateMap", {
       map: this.event.map,
       name: window.characterName,
@@ -75,7 +78,9 @@ class OverworldEvent {
       this.map.overworld.startMap(this.event.map);
       resolve();
 
-      sceneTransition.fadeOut();
+      if (this.event.map !== "Blank") {
+        sceneTransition.fadeOut();
+      }
     });
   }
 
